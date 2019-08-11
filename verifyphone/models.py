@@ -22,7 +22,6 @@ class PhoneNumber(TimestampedModel):
     )
     number = models.CharField(max_length=17, blank=True) 
     verified = models.BooleanField(default=False)
-    verification_date = models.DateField(null=True,blank=True)
     
     def __str__(self):
         return self.user.email
