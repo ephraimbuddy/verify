@@ -27,6 +27,26 @@ Now install the necessary dependencies:
 
 ```pip install django djangorestframework twilio pyotp python-decouple```
 
+Update the settings file:
+First you need to signup with twilio to get your accound sd, token and phone number. After you get those things.
+Create a `.env` file at the root of this app and add the twilio settings below:
+
+    AUTH_USER_MODEL = "authentication.User"
+    #Twilio
+    TWILIO_PHONE = config('TWILIO_PHONE', default=None)
+    TWILIO_ACCOUNT_SID = config('TWILIO_ACCOUNT_SID', default=None)
+    TWILIO_AUTH_TOKEN = config('TWILIO_AUTH_TOKEN', default=None)
+    
+Make sure to add rest_framework,phone app and authentication app in installed apps:
+
+    INSTALLED_APPS = [
+    ....,
+    'rest_framework',
+    'phone.apps.PhoneConfig',
+    'authentication.apps.AuthenticationConfig'
+]
+
+
 After installation, run the migration:
 
 ```python manage.py makemigrations```
