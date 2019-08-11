@@ -1,4 +1,4 @@
-from .serializers import ProfileSerializer
+from .serializers import PhoneNumberSerializer
 from .models import PhoneNumber
 from django.utils import timezone
 from rest_framework import viewsets
@@ -19,7 +19,7 @@ client = TwilioClient(account_sid, auth_token)
 
 class PhoneViewset(viewsets.ModelViewSet):
     queryset = PhoneNumber.objects.all()
-    serializer_class = PhoneSerializer
+    serializer_class = PhoneNumberSerializer
     permission_classes = (permissions.IsAuthenticated,)
 
 
