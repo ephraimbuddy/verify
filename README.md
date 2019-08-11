@@ -35,17 +35,6 @@ Create a `.env` file at the root of this app and add the twilio settings below:
     TWILIO_ACCOUNT_SID = your twilio account sid
     TWILIO_AUTH_TOKEN = your twilio auth token
 
-    
-Make sure to add rest_framework,phone app and authentication app in installed apps:
-
-    INSTALLED_APPS = [
-    ....,
-    'rest_framework',
-    'phone.apps.PhoneConfig',
-    'authentication.apps.AuthenticationConfig'
-]
-
-
 After installation, run the migration:
 
 ```python manage.py makemigrations```
