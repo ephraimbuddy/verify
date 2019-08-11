@@ -31,11 +31,10 @@ Update the settings file:
 First you need to signup with twilio to get your accound sd, token and phone number. After you get those things.
 Create a `.env` file at the root of this app and add the twilio settings below:
 
-    AUTH_USER_MODEL = "authentication.User"
-    #Twilio
-    TWILIO_PHONE = config('TWILIO_PHONE', default=None)
-    TWILIO_ACCOUNT_SID = config('TWILIO_ACCOUNT_SID', default=None)
-    TWILIO_AUTH_TOKEN = config('TWILIO_AUTH_TOKEN', default=None)
+    TWILIO_PHONE = your twilio phone number
+    TWILIO_ACCOUNT_SID = your twilio account sid
+    TWILIO_AUTH_TOKEN = your twilio auth token
+
     
 Make sure to add rest_framework,phone app and authentication app in installed apps:
 
