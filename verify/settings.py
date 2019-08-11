@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-
+from decouple import config
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'phone.apps.PhoneConfig',
+    'authentication.apps.AuthenticationConfig'
 ]
 
 MIDDLEWARE = [
@@ -99,6 +102,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = "authentication.User"
+#Twilio
+TWILIO_PHONE = config('TWILIO_PHONE', default=None)
+TWILIO_ACCOUNT_SID = config('TWILIO_ACCOUNT_SID', default=None)
+TWILIO_AUTH_TOKEN = config('TWILIO_AUTH_TOKEN', default=None)
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/

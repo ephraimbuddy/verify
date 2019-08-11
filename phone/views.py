@@ -22,17 +22,12 @@ class PhoneViewset(viewsets.ModelViewSet):
     serializer_class = PhoneNumberSerializer
     permission_classes = (permissions.IsAuthenticated,)
 
+    def perform_create(self, serializer):
 
-@api_view(['POST'])
-@permission_classes([permissions.IsAuthenticated])
-def verify_phone(request, format=None):
-    code = int(request.data['sms_code'])
-    if request.user.authenticate(code):
-        phone = request.user.phone
-        phone.verified=True
-        phone.save()
-        return Response(status=201)
-    return Response(dict(detail='The provided code did not match or has expired'),status=200)
+        '''Associate user with phone number'''
+
+        serializer.save(user=self.request.user)
+
     
 
 @api_view(['GET'])
@@ -49,3 +44,15 @@ def send_sms_code(request, format=None):
                      to=user_phone_number
                  )
     return Response(status=200)
+
+
+@api_view(['POST'])
+@permission_classes([permissions.IsAuthenticated])
+def verify_phone(request, format=None):
+    code = int(request.data['sms_code'])
+    if request.user.authenticate(code):
+        phone = request.user.phone
+        phone.verified=True
+        phone.save()
+        return Response(status=201)
+    return Response(dict(detail='The provided code did not match or has expired'),status=200)

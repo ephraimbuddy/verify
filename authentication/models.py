@@ -4,7 +4,7 @@ from django.contrib.auth.models import (
     AbstractBaseUser, BaseUserManager, PermissionsMixin
 )
 from django.db import models
-from verifyphone.models import TimestampedModel
+from phone.models import TimestampedModel
 import pyotp
 
 class UserManager(BaseUserManager):
