@@ -7,7 +7,7 @@ This app is to demonstrate how to create API endpoints for phone number verifica
 
 To run this app on your system. Do the following:
 
-### Clone the app
+### How to Run the app
 
 ```git clone https://github.com/ephraimbuddy/verify.git```
 
