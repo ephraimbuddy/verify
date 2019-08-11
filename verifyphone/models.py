@@ -14,7 +14,6 @@ class TimestampedModel(models.Model):
         ordering = ['-created_at', '-updated_at']
 
 
-
 class PhoneNumber(TimestampedModel):
     
     user = models.OneToOneField(
