@@ -54,5 +54,5 @@ def verify_phone(request,sms_code, format=None):
         phone = request.user.phonenumber
         phone.verified=True
         phone.save()
-        return Response(status=201)
+        return Response(dict(detail = "Phone number verified successfully"),status=201)
     return Response(dict(detail='The provided code did not match or has expired'),status=200)
