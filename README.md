@@ -56,3 +56,8 @@ Run the App:
     ^phones/$ [name='phonenumber-list']
     ^phones/(?P<pk>[^/.]+)/$ [name='phonenumber-detail']
     api-auth/
+    
+Create a super user and navigate to `http://127.0.0.1:8000/users/`.
+Login and update the phone number. After you have saved it, head to `http://127.0.0.1:8000/send_sms_code/` and an sms will be sent to your phone. Use the code sent to form the verify_phone url: `http://127.0.0.1:8000/verfiy_phone/your_code_here`.
+
+###The end
