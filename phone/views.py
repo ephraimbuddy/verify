@@ -51,7 +51,7 @@ def send_sms_code(request, format=None):
 def verify_phone(request,sms_code, format=None):
     code = int(sms_code)
     if request.user.authenticate(code):
-        phone = request.user.phone
+        phone = request.user.phonenumber
         phone.verified=True
         phone.save()
         return Response(status=201)
