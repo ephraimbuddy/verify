@@ -35,7 +35,7 @@ class PhoneViewset(viewsets.ModelViewSet):
 def send_sms_code(request, format=None):
     
     #Time based otp
-    time_otp = pyotp.TOTP(request.user.key, interval=60)
+    time_otp = pyotp.TOTP(request.user.key, interval=300)
     time_otp = time_otp.now()
     user_phone_number = request.user.phonenumber.number #Must start with a plus '+'
     client.messages.create(

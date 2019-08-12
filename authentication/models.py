@@ -85,5 +85,5 @@ class User(AbstractBaseUser, PermissionsMixin, TimestampedModel):
             return False
         #Here we are using Time Based OTP. The interval is 60 seconds.
         #otp must be provided within this interval or it's invalid
-        t = pyotp.TOTP(self.key, interval=60)
+        t = pyotp.TOTP(self.key, interval=300)
         return t.verify(provided_otp)
