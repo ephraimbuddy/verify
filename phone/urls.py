@@ -8,7 +8,7 @@ router.register(r'phones', views.PhoneViewset)
 
 urlpatterns = [
     path('send_sms_code/',views.send_sms_code),
-    path('verify_phone/',views.verify_phone),
+    path('verify_phone/<int:sms_code>',views.verify_phone),
 ]
 
 urlpatterns += router.urls

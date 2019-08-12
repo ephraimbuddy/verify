@@ -46,10 +46,10 @@ def send_sms_code(request, format=None):
     return Response(status=200)
 
 
-@api_view(['POST'])
+@api_view(['GET'])
 @permission_classes([permissions.IsAuthenticated])
-def verify_phone(request, format=None):
-    code = int(request.data['sms_code'])
+def verify_phone(request,sms_code, format=None):
+    code = int(sms_code)
     if request.user.authenticate(code):
         phone = request.user.phone
         phone.verified=True
