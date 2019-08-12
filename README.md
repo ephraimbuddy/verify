@@ -52,7 +52,7 @@ Run the App:
     ^users/$ [name='user-list']
     ^users/(?P<pk>[^/.]+)/$ [name='user-detail']
     send_sms_code/
-    verify_phone/
+    verify_phone/<int:sms_code>
     ^phones/$ [name='phonenumber-list']
     ^phones/(?P<pk>[^/.]+)/$ [name='phonenumber-detail']
     api-auth/
