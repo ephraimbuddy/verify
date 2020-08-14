@@ -1,5 +1,6 @@
 Phone Verification Demo
-========================
+=======================
+Read the [blog Post](https://medium.com/@EphraimBuddy/building-a-real-world-phone-verification-api-endpoints-with-django-rest-framework-839c5e8ffb0b)
 
 A phone number verification API tutorial
 
