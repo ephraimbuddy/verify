@@ -22,7 +22,7 @@ Create a new virtual environment
 
 Activate the environment
 
-```source env/bin/activate``` On windows: ```source env/Scripts/activate```
+```source env/bin/activate``` On windows: ```source env\Scripts\activate```
 
 Now install the necessary dependencies:
 
